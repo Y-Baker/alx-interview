@@ -18,7 +18,7 @@ def canUnlockAll(boxes):
         if len(keys) == 0:
             break
         for key in keys:
-            if not opened[key]:
+            if key < len(boxes) and not opened[key]:
                 opened[key] = True
                 newKeys += boxes[key]
 
