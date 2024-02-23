@@ -19,8 +19,8 @@ if __name__ == "__main__":
         exit(1)
 
     cols = set()
-    posDia = set() # (r + c)
-    negDia = set() # (r - c)
+    posDia = set()  # (r + c)
+    negDia = set()  # (r - c)
 
     results = []
     res = []
