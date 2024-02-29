@@ -5,7 +5,7 @@ Main file for testing
 
 makeChange = __import__('0-making_change').makeChange
 
-print(makeChange([6, 3, 4], 7))
+print(makeChange([6, 3, 4], 7))  # should return 2 but returns -1
 
 print(makeChange([1, 2, 25], 37))
 
