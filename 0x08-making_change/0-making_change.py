@@ -3,13 +3,13 @@
 
 
 def makeChange(coins, total):
-    """determine the fewest number of coins needed to meet a given amount total"""
+    """return the fewest number of coins needed to meet a given amount"""
     if total <= 0:
         return 0
 
     coins = sorted(coins, reverse=True)
 
-    count = 0    
+    count = 0
     for coin in coins:
         if total == 0:
             break
