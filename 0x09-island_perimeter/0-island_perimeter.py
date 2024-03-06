@@ -32,7 +32,6 @@ def island_perimeter(grid):
         while q:
             row, col = q.popleft()
 
-
             for one in directions:
                 r = row + one[0]
                 c = col + one[1]
