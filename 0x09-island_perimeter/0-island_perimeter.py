@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Interview Problem Graph"""
 
-from collections import deque
-
 
 def island_perimeter(grid):
     """returns the perimeter of the island described in grid"""
@@ -11,7 +9,7 @@ def island_perimeter(grid):
 
     perimeter = [0]
     n = 0
-    q = deque()
+    q = []
     seen = set()
 
     def countZeros(row, col):
@@ -30,7 +28,7 @@ def island_perimeter(grid):
         directions = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 
         while q:
-            row, col = q.popleft()
+            row, col = q.pop()
 
             for one in directions:
                 r = row + one[0]
