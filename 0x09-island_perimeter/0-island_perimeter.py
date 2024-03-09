@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Interview Problem Graph"""
 
+
 def island_perimeter(grid):
     """returns the perimeter of the island described in grid"""
     if not grid:
@@ -18,8 +19,10 @@ def island_perimeter(grid):
         for one in directions:
             r = row + one[0]
             c = col + one[1]
-            if r not in range(0, len(grid)) or c not in range(0, len(grid[0])) or grid[r][c] == 0:
-                    count += 1
+            if (r not in range(0, len(grid)) or
+                    c not in range(0, len(grid[0])) or
+                    grid[r][c] == 0):
+                count += 1
 
         return count
 
