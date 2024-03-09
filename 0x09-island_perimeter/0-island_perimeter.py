@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Interview Problem Graph"""
-
+from collections import deque
 
 def island_perimeter(grid):
     """returns the perimeter of the island described in grid"""
@@ -9,7 +9,7 @@ def island_perimeter(grid):
 
     perimeter = [0]
     n = 0
-    q = []
+    q = deque()
     seen = set()
 
     def countZeros(row, col):
@@ -19,16 +19,16 @@ def island_perimeter(grid):
         for one in directions:
             r = row + one[0]
             c = col + one[1]
-            if grid[r][c] == 0:
-                count += 1
+            if r not in range(0, len(grid)) or c not in range(0, len(grid[0])) or grid[r][c] == 0:
+                    count += 1
 
         return count
 
-    def BSF(row_root, col_root):
+    def BFS(row_root, col_root):
         directions = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 
         while q:
-            row, col = q.pop()
+            row, col = q.popleft()
 
             for one in directions:
                 r = row + one[0]
@@ -43,9 +43,10 @@ def island_perimeter(grid):
 
     for row in range(len(grid)):
         for col in range(len(grid[0])):
-            if (row, col) not in seen:
+            if grid[row][col] == 1 and (row, col) not in seen:
                 q.append((row, col))
                 seen.add((row, col))
-                BSF(row, col)
+                perimeter[0] += countZeros(row, col)
+                BFS(row, col)
 
     return perimeter[0]
