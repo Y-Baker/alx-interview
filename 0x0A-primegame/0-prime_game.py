@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Prime Game"""
+
 
 def genprimes(n):
     """Generates prime numbers up to n"""
@@ -12,6 +14,7 @@ def genprimes(n):
         p += 1
 
     return primes
+
 
 def isWinner(x, nums):
     """Determines the winner of the game"""
@@ -41,4 +44,3 @@ def isWinner(x, nums):
         return "Ben"
     else:
         return None
-
