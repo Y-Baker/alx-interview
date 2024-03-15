@@ -22,6 +22,9 @@ def isWinner(x, nums):
     ben = 0
     primes = genprimes(max(nums))
 
+    if x != len(nums):
+        return None
+
     for i in nums:
         flag = True  # Maria's turn
         copy = primes[:i + 1]
